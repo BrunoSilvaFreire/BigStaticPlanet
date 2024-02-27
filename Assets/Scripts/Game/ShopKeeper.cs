@@ -4,11 +4,11 @@ namespace Game
 {
     public class ShopKeeper :  Trait
     {
-        private InventoryHolder _inventoryHolder;
+        private Inventory _inventory;
         private Interactable _interactable;
         public override void Describe(TraitDescriptor descriptor)
         {
-            if (descriptor.DependsOn(out _inventoryHolder, out _interactable))
+            if (descriptor.DependsOn(out _inventory, out _interactable))
             {
                 _interactable.OnInteract(Attend);
             }
