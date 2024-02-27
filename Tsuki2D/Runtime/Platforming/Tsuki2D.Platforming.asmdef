@@ -1,0 +1,12 @@
+{
+  "name": "Tsuki2D.Platforming",
+  "rootNamespace": "Lunari.Tsuki2D",
+  "references": [
+    "guid:75469ad4d38634e559750d17036d5f7c",
+    "guid:4c0668d2c90a58d40a31bb673f8cde7d",
+    "guid:c7b2a1cd13c5ebf469a4669c48bef51c",
+    "guid:f0b90d729231b1e4695df29237e98f04",
+    "guid:9143540cf3958c64e877b2ff45050de6",
+    "guid:f0d4d5c53212dbf4998f681483b47962"
+  ]
+}

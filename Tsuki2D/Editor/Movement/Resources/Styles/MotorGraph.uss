@@ -1,0 +1,16 @@
+.root {
+    --primary-accent: rgba(68, 192, 255, 0.5);
+    --secondary-accent: rgb(68, 192, 255);
+}
+
+.motor-attachment {
+    border-radius: 4px;
+    border-width: 2px;
+    margin: 4px;
+    padding: 2px;
+    background-color: rgba(63, 63, 63, 0.8);
+}
+
+.motor-attachment:hover {
+    border-color: rgba(68, 192, 255, 0.5);
+}

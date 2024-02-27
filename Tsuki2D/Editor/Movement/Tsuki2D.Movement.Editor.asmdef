@@ -1,0 +1,25 @@
+{
+    "name": "Tsuki2D.Movement.Editor",
+    "rootNamespace": "Lunari.Tsuki2D",
+    "references": [
+        "GUID:c7b2a1cd13c5ebf469a4669c48bef51c",
+        "GUID:24dc55227be3bb04f866dc23aa97101f",
+        "GUID:4e4b2da11469cf1a1a03b701b200edf7",
+        "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
+        "GUID:f0b90d729231b1e4695df29237e98f04",
+        "GUID:9143540cf3958c64e877b2ff45050de6",
+        "GUID:f0d4d5c53212dbf4998f681483b47962",
+        "guid:13575bce312b8495cb768ae8628785c5"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Tsuki2D.Input",
+    "rootNamespace": "Lunari.Tsuki2D",
+    "references": [
+        "Tsuki.Runtime",
+        "Tsuki.Entities",
+        "Tsuki2D.Common",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,114 @@
+MotorAnalyzerSection {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgba(63, 63, 63, 0.8);
+}
+
+MotorAnalyzerSection #unity-content > * {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+MotorAnalyzerSection > Foldout > Toggle {
+    margin-left: 4px;
+}
+
+.motor-analyzer-section-title {
+    -unity-font-style: bold;
+}
+
+.motor-card {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.motor-analyzer-header {
+    -unity-font-style: bold;
+    font-size: 18px;
+}
+
+MotorAnalyzerSettings > #settings-content > Foldout > Toggle #unity-checkmark {
+    margin-top: 4px;
+    margin-right: 8px
+}
+
+MotorAnalyzerSettings > #settings-content > ToolbarMenu {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+MotorAnalyzerSettings.has-motor > #settings-content > ToolbarMenu > TextElement {
+
+    -unity-font-style: bold;
+}
+
+
+.recording-toggle #unity-checkmark {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    background-image: resource("icons/animation.record@2x.png");
+}
+
+.recording-toggle {
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-color: var(--unity-colors-box-background);
+    border-right-width: 1px;
+}
+
+.recording-toggle:hover {
+    background-color: #594040;
+}
+
+.recording-toggle:checked {
+    background-color: #502828;
+}
+
+
+.play-toggle #unity-checkmark {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    background-image: resource("icons/playbutton on@2x.png");
+}
+
+.play-toggle {
+    margin: 0;
+    padding-left: 8px;
+    padding-right: 4px;
+    border-color: var(--unity-colors-box-background);
+    border-right-width: 1px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.analyzer-right-border {
+    border-right-width: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.play-toggle:hover {
+    background-color: #494949;
+}
+
+.play-toggle:checked {
+    background-color: #5d5d5d;
+}
+
+
+MotorAnalyzer Toolbar {
+    border-radius: 8px;
+}
+MotorAnalyzerPlot {
+    margin-top: 8px;
+    border-width: 1px;
+    border-color: rgb(87, 87, 87);
+}

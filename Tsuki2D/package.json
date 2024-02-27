@@ -1,0 +1,24 @@
+{
+  "name": "com.lunari.tsuki2d",
+  "displayName": "Tsuki2D",
+  "author": "Lunari Studios",
+  "version": "0.1.0",
+  "description": "Making 2D platformer games easy to make",
+  "unity": "2019.1",
+  "repository": "https://github.com/BrunoSilvaFreire/Tsuki2D",
+  "keywords": [
+    "2D",
+    "Platformer",
+    "Movement"
+  ],
+  "contributors": [
+    "Bruno \"DDevil\" Silva Freire"
+  ],
+  "samples": [
+    {
+      "displayName": "Basic Motor",
+      "description": "Basic motor example with platformer movement",
+      "path": "Samples~/Basic"
+    }
+  ]
+}
