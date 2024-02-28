@@ -7,13 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 458533951, guid: 45054440abafa284f9eda260768d33c7, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669858937, guid: 45054440abafa284f9eda260768d33c7, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3478457463616518850, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: m_Name
       value: ShopKeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 3478457463616518850, guid: 45054440abafa284f9eda260768d33c7, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316081961339124673, guid: 45054440abafa284f9eda260768d33c7, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6554967538351676939, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: source
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668484758559942750, guid: 45054440abafa284f9eda260768d33c7, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7421942176061238603, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: m_RootOrder
@@ -21,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7421942176061238603, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: -13.75
       objectReference: {fileID: 0}
     - target: {fileID: 7421942176061238603, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7421942176061238603, guid: 45054440abafa284f9eda260768d33c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f936f0addd8b43329f1db6845d70ae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _generateRandomContentsFromRegistry: 0
 --- !u!114 &1951264528
 MonoBehaviour:
   m_ObjectHideFlags: 0

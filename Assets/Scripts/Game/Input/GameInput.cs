@@ -8,9 +8,11 @@ namespace Game.Input
         private void Awake()
         {
             Inventory = new EntityAction();
+            Interact = new EntityAction();
         }
 
         public EntityAction Inventory { get; private set; }
+        public EntityAction Interact { get; private set; }
 
         protected override void ReadInput(TopDownInputSource src)
         {
@@ -18,6 +20,7 @@ namespace Game.Input
             if (src is GameInputSource gameSrc)
             {
                 Inventory.Current = gameSrc.GetInventory();
+                Interact.Current = gameSrc.GetInteract();
             }
         }
     }

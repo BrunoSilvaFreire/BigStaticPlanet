@@ -5,18 +5,26 @@ namespace Game.Input
 {
     public class GameInputSource : TopDownInputSource
     {
-        private InputAction _action;
+        private InputAction _inventory;
+        private InputAction _interact;
         public string inventoryActionName = "Inventory";
+        public string interactActionName = "Interact";
 
         protected override void Start()
         {
             base.Start();
-            _action = input.actions[inventoryActionName];
+            _inventory = input.actions[inventoryActionName];
+            _interact = input.actions[interactActionName];
         }
 
         public bool GetInventory()
         {
-            return _action.IsPressed();
+            return _inventory.IsPressed();
+        }
+
+        public bool GetInteract()
+        {
+            return _interact.IsPressed();
         }
     }
 }
