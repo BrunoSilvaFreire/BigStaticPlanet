@@ -1,5 +1,6 @@
 ﻿using Lunari.Tsuki.Entities;
 using Lunari.Tsuki.Singletons;
+using TMPro;
 using UnityEngine;
 
 namespace Game
@@ -8,12 +9,22 @@ namespace Game
     {
         [SerializeField] private TransactionView _transactionView;
         [SerializeField] private Entity _entity;
-        private uint _money;
-
+        [SerializeField] private uint _money = 100000;
+        [SerializeField] private TMP_Text _moneyLabel;
         public uint Money
         {
             get => _money;
-            set => _money = value;
+            set
+            {
+                _money = value;
+                _moneyLabel.text = $"${_money}";
+            }
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            _moneyLabel.text = $"${_money}";
         }
 
         public TransactionView TransactionView => _transactionView;
