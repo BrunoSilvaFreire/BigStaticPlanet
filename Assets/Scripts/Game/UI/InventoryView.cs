@@ -1,5 +1,4 @@
-﻿using System;
-using Game.UI.Datenshi.UI;
+﻿using Game.UI.Datenshi.UI;
 using Lunari.Tsuki;
 using UnityEngine;
 
@@ -10,6 +9,8 @@ namespace Game.UI
         [SerializeField] private Transform _inventoryContainer;
         [SerializeField] private ItemStackView _itemStackViewPrefab;
         private ItemStackView[] _views;
+        private Inventory _inventory;
+        [SerializeField] private InventoryHandler _handler;
 
         private void Awake()
         {
@@ -27,13 +28,29 @@ namespace Game.UI
             for (var i = 0; i < Inventory.InventorySize; i++)
             {
                 var view = _itemStackViewPrefab.Clone(_inventoryContainer);
+                view.ClickCallback = OnClicked;
                 _views[i] = view;
             }
 
         }
 
+        private void OnClicked(ItemStack itemStack)
+        {
+            if (_inventory == null)
+            {
+                return;
+            }
+
+            if (_handler == null)
+            {
+                return;
+            }
+            _handler.OnClicked(itemStack);
+        }
+
         public void Replicate(Inventory inventory)
         {
+            _inventory = inventory;
             for (var i = 0; i < inventory.Contents.Count; i++)
             {
                 var content = inventory.Contents[i];

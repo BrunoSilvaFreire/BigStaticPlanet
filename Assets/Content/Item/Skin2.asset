@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Skin2
   m_EditorClassIdentifier: 
   _thumbnail: {fileID: 21300000, guid: f7e7bed775fff8347b9e53c67e20875f, type: 3}
-  _price: 200
+  _price: 2500
   _skin: {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f, type: 3}

@@ -71,8 +71,8 @@ CanvasGroup:
   m_GameObject: {fileID: 629843104}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &4821871566627730950
 GameObject:
@@ -134,9 +134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -251,7 +251,7 @@ RectTransform:
   m_GameObject: {fileID: 9160899708864774353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9096039607388230156}
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &9160899708864774358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,8 +338,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shown: 0
   _group: {fileID: 2312489411043382911}
+  _onRevealed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2027966348805943542}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onConcealed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2027966348805943542}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+        m_MethodName: set_blocksRaycasts
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   animator: {fileID: 6282171694496770091}
   revealedState: Base Layer.Revealed
   concealedState: Base Layer.Concealed
   _inventoryContainer: {fileID: 629843105}
   _itemStackViewPrefab: {fileID: 1324905730, guid: 32728e6b83c88cd4c9f4d906ae2dcc9a, type: 3}
+  _handler: {fileID: 0}
