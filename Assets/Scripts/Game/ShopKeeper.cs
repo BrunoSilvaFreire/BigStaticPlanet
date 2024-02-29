@@ -16,7 +16,9 @@ namespace Game
 
         private void Attend(Entity entity)
         {
-            
+            var transactionView = Player.Instance.TransactionView;
+            transactionView.SetOtherInventory(_inventory);
+            transactionView.Shown = !transactionView.Shown;
         }
     }
 }

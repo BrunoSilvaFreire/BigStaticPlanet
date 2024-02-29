@@ -1,13 +1,19 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.UI
 {
     public abstract class View : MonoBehaviour
     {
         [SerializeField] [HideInInspector] private bool shown;
-
         [SerializeField] protected CanvasGroup _group;
+        [SerializeField] private UnityEvent _onRevealed;
+        [SerializeField] private UnityEvent _onConcealed;
+
+        public UnityEvent OnRevealed => _onRevealed;
+
+        public UnityEvent OnConcealed => _onConcealed;
 
         public bool Shown
         {
@@ -60,6 +66,7 @@ namespace Game.UI
             {
                 Reveal();
             }
+            _onRevealed.Invoke();
         }
 
         public void Hide(bool immediate = false)
@@ -73,6 +80,8 @@ namespace Game.UI
             {
                 Conceal();
             }
+
+            _onConcealed.Invoke();
         }
 
         public void SetShown(bool shown, bool immediate)

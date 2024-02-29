@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9096039607388230156}
   - component: {fileID: 6282171694496770091}
+  - component: {fileID: 2312489411043382911}
   m_Layer: 5
   m_Name: Root
   m_TagString: Untagged
@@ -209,6 +210,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &2312489411043382911
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129550221378564857}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9160899708864774353
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +251,7 @@ RectTransform:
   m_GameObject: {fileID: 9160899708864774353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9096039607388230156}
@@ -293,7 +306,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &9160899708864774358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,5 +336,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57cd659a18144bf1966266b4672568ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shown: 0
+  _group: {fileID: 2312489411043382911}
+  animator: {fileID: 6282171694496770091}
+  revealedState: Base Layer.Revealed
+  concealedState: Base Layer.Concealed
   _inventoryContainer: {fileID: 629843105}
   _itemStackViewPrefab: {fileID: 1324905730, guid: 32728e6b83c88cd4c9f4d906ae2dcc9a, type: 3}

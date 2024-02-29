@@ -2,8 +2,8 @@
 using UnityEngine.InputSystem;
 namespace Lunari.Tsuki2D.Runtime.Input.TopDown {
     public class TopDownInputSource : InputSource {
-        private InputAction vertical;
-        private InputAction horizontal;
+        protected InputAction vertical;
+        protected InputAction horizontal;
         public PlayerInput input;
         public string verticalInputName = "vertical";
         public string horizontalInputName = "horizontal";

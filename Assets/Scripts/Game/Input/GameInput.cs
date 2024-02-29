@@ -9,10 +9,12 @@ namespace Game.Input
         {
             Inventory = new EntityAction();
             Interact = new EntityAction();
+            Back = new EntityAction();
         }
 
         public EntityAction Inventory { get; private set; }
         public EntityAction Interact { get; private set; }
+        public EntityAction Back { get; private set; }
 
         protected override void ReadInput(TopDownInputSource src)
         {
@@ -21,6 +23,7 @@ namespace Game.Input
             {
                 Inventory.Current = gameSrc.GetInventory();
                 Interact.Current = gameSrc.GetInteract();
+                Back.Current = gameSrc.GetBack();
             }
         }
     }
