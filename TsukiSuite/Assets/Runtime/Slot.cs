@@ -1,9 +1,9 @@
 ﻿using System;
-using UnityEditor.UIElements;
 using UnityEngine.Events;
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
 #endif
+
 namespace Lunari.Tsuki {
     [Serializable]
     public class Slot<T> where T : class {

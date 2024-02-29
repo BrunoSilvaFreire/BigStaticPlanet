@@ -1,7 +1,10 @@
-﻿using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor.UIElements;
+#endif
 namespace Lunari.Tsuki {
     public static class SlotExtensions {
         public static Slot<T> When<T>(this Slot<T> slot, UnityAction<T> onChanged) where T : class {
@@ -114,6 +117,7 @@ namespace Lunari.Tsuki {
         public static void Clear<T>(this Slot<T> slot) where T : class {
             slot.Value = null;
         }
+#if UNITY_EDITOR
         public static Slot<T> SyncWith<T>(this Slot<T> slot, ObjectField field) where T : Behaviour {
             slot.OnChanged(() => {
                 if (field.value != slot.Value) {
@@ -127,6 +131,8 @@ namespace Lunari.Tsuki {
             });
             return slot;
         }
+#endif
+
         public static Slot<T> EnableWhenNotNull<T>(this Slot<T> slot, VisualElement recordingToolbar) where T : class {
             return slot.When(value => recordingToolbar.SetEnabled(value != null));
         }
