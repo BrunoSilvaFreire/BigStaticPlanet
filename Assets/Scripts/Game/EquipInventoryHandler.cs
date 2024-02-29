@@ -16,6 +16,7 @@ namespace Game
             {
                 skinTrait.ChangeSkin(skin);
             }
+            return;
         }
     }
 }

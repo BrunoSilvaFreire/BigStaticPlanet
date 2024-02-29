@@ -1,107 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Lunari.Tsuki.Entities;
-using Unity.Services.Analytics;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Game
 {
-    public class InventoryTransaction
-    {
-        private List<ItemMapping> mappings = new List<ItemMapping>();
-        private List<ItemStack> leftovers = new List<ItemStack>();
-        private Inventory inventory;
-
-        public InventoryTransaction(IEnumerable<ItemStack> sources, Inventory inventory)
-        {
-            this.inventory = inventory;
-
-            // Initialize mappings and leftovers from sources
-            var contents = inventory.Contents;
-            foreach (var source in sources)
-            {
-                var mapping = new ItemMapping(source.Clone());
-                mappings.Add(mapping);
-
-                // Attempt to map items to existing inventory slots or determine leftovers
-                var fullyMapped = false;
-
-                // Attempt to add to existing slots
-                for (var i = 0; i < contents.Count; i++)
-                {
-                    if (!contents[i].IsSimilar(source) || contents[i].Quantity >= byte.MaxValue)
-                    {
-                        continue;
-                    }
-
-                    var availableToAdd = (byte)(byte.MaxValue - contents[i].Quantity);
-                    var toAdd = (byte)Math.Min(availableToAdd, source.Quantity);
-                    mapping.Outputs.Add(new ItemOutput(i, toAdd));
-                    source.SubtractQuantity(toAdd);
-
-                    if (!source.IsEmpty())
-                    {
-                        continue;
-                    }
-
-                    fullyMapped = true;
-                    break; // Break if fully mapped
-                }
-
-                // If not fully mapped, attempt to find empty slots
-                if (!fullyMapped)
-                {
-                    for (var i = 0; i < contents.Count; i++)
-                    {
-                        if (!contents[i].IsEmpty())
-                        {
-                            continue;
-                        }
-
-                        mapping.Outputs.Add(new ItemOutput(i, source.Quantity));
-                        fullyMapped = true;
-                        break; // Break if item has been fully placed
-                    }
-                }
-
-                if (!fullyMapped)
-                {
-                    leftovers.Add(source); // Add to leftovers if not fully placed
-                }
-            }
-        }
-
-        public bool CanFullyApply()
-        {
-            return leftovers.Count == 0;
-        }
-
-        public bool TryApply(bool mustApplyAll = true)
-        {
-            if (mustApplyAll && !CanFullyApply()) return false;
-
-            foreach (var mapping in mappings)
-            {
-                foreach (var output in mapping.Outputs)
-                {
-                    if (inventory.Contents[output.Into].IsEmpty() ||
-                        inventory.Contents[output.Into].IsSimilar(mapping.Item))
-                    {
-                        inventory.Contents[output.Into].AddQuantity(output.Amount);
-                    }
-                }
-            }
-
-            return true;
-        }
-    }
-
     public class Inventory : Trait
     {
         private ItemStack[] _contents;
         [SerializeField] private bool _generateRandomContentsFromRegistry;
+        [SerializeField] UnityEvent _onChanged;
+
+        public UnityEvent OnChanged => _onChanged;
+
         public const int InventorySize = 3 * 8;
 
         private void Awake()
@@ -164,6 +76,7 @@ namespace Game
                     if (_contents[i].IsEmpty())
                     {
                         _contents[i] = itemToAdd;
+                        OnChanged.Invoke();
                         return true;
                     }
                 }
@@ -181,6 +94,7 @@ namespace Game
                     _contents[slot].AddQuantity(itemToAdd.Quantity);
                 }
 
+                OnChanged.Invoke();
                 return true;
             }
         }
@@ -195,6 +109,7 @@ namespace Game
                     if (_contents[i].Quantity >= itemToRemove.Quantity)
                     {
                         _contents[i].SubtractQuantity(itemToRemove.Quantity);
+                        OnChanged.Invoke();
                         return true;
                     }
                 }

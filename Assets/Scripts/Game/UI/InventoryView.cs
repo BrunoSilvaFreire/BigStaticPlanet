@@ -1,6 +1,8 @@
-﻿using Game.UI.Datenshi.UI;
+﻿using System;
+using Game.UI.Datenshi.UI;
 using Lunari.Tsuki;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Game.UI
 {
@@ -45,17 +47,35 @@ namespace Game.UI
             {
                 return;
             }
+
             _handler.OnClicked(itemStack);
         }
 
         public void Replicate(Inventory inventory)
         {
+            if (inventory != _inventory)
+            {
+                if (_inventory != null)
+                {
+                    _inventory.OnChanged.RemoveListener(OnChanged);
+                }
+
+                if (inventory != null)
+                {
+                    inventory.OnChanged.AddListener(OnChanged);
+                }
+            }
             _inventory = inventory;
             for (var i = 0; i < inventory.Contents.Count; i++)
             {
                 var content = inventory.Contents[i];
                 _views[i].Replicate(content);
             }
+        }
+
+        private void OnChanged()
+        {
+            Replicate(_inventory);
         }
     }
 }
