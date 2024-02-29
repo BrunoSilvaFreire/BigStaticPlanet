@@ -9,7 +9,10 @@ namespace Game
     {
         [SerializeField] private Sprite _thumbnail;
         [SerializeField] private uint _price;
-
+        /*
+         * TODO: Better method for this, since we'll only sell skins for now, this is faster and easier
+         */
+        [SerializeField] private GameObject _skin;
         public Sprite Thumbnail => _thumbnail;
         public uint Price => _price;
 
@@ -17,6 +20,8 @@ namespace Game
         {
             return new ItemStack(this, quantity);
         }
+
+        public GameObject Skin => _skin;
     }
 
     [Serializable]
