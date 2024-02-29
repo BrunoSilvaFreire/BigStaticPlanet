@@ -15,6 +15,10 @@ namespace Game
 
         public void ChangeSkin(GameObject otherPrefab)
         {
+            if (_activeSkin != null)
+            {
+                Destroy(_activeSkin);
+            }
             _activeSkin = otherPrefab.Clone(transform);
             _animator = _activeSkin.GetComponentInChildren<Animator>();
         }
