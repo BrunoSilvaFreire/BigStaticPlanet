@@ -15,7 +15,7 @@ namespace Game
                 return;
             }
 
-            var cost = stack.Definition.Price;
+            var cost = stack.Definition.Price * stack.Quantity;
             var player = Player.Instance;
             if (player.Money < cost || !_shopkeeperInventory.RemoveItem(stack))
             {

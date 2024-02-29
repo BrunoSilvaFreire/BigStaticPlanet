@@ -5,21 +5,22 @@ namespace Game
 {
     public class SellInventoryHandler : InventoryHandler
     {
-        [SerializeField]
-        private Inventory _shopkeeperInventory;
+        [SerializeField] private Inventory _shopkeeperInventory;
 
         public override void OnClicked(ItemStack stack)
         {
-            if ( stack.Definition == null || _shopkeeperInventory == null)
+            if (stack.Definition == null || _shopkeeperInventory == null)
             {
                 return;
             }
+
             var player = Player.Instance;
             if (!player.Entity.Access(out Inventory inventory))
             {
                 return;
             }
-            var sellValue = stack.Definition.Price;
+
+            var sellValue = stack.Definition.Price * stack.Quantity;
             if (!inventory.RemoveItem(stack))
             {
                 return;
